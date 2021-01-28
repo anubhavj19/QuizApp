@@ -22,8 +22,6 @@ public class ModuleEntity {
 
   @Id
   private String id;
-
   private String moduleId;
-    
   private List<QuestionEntity> questions;
 }
