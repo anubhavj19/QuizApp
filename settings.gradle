@@ -21,3 +21,4 @@ pluginManagement {
     }
 }
 rootProject.name = 'BUILDOUT_QA'
+include 'buildoutqa'
