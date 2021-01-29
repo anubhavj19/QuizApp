@@ -9,6 +9,7 @@
 # where my password is 'p@55w0rd', I encoded it on www.url-encode-online.rocks/urlencode
 # post you are able to successfully replace the statement below to point to your cluster.
 
+#export MONGO_URL="mongodb+srv://admin:Anand123@buildout-qa.94q9m.mongodb.net/test"
 export MONGO_URL="mongodb+srv://admin:adminP%40ssw0rd@buildout-qa.esf6i.mongodb.net/test"
 
 
