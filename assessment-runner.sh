@@ -18,4 +18,4 @@ while ! netstat -tna | grep 'LISTEN\>' | grep -q ':8081\>'; do
 done
 
 # If you have any script to load the data make sure that its part of this bash script.
-mongoimport --uri mongodb+srv://admin:adminP%40ssw0rd@buildout-qa.esf6i.mongodb.net/test --collection questions --type json --file initial_data_load.json
+mongoimport --uri mongodb+srv://admin:adminP%40ssw0rd@buildout-qa.esf6i.mongodb.net/test --collection questions --type json --file initial_data_load_copy.json --jsonArray

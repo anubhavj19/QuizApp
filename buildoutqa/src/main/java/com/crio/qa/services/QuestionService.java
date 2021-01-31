@@ -6,7 +6,7 @@ import com.crio.qa.exchanges.PostUserQuery;
 
 public interface QuestionService {
 
-  GetQuestionsResponse retrieveQuestions(String moduleId);
+  GetQuestionsResponse retrieveQuestions();
   
-  PostQuestionsResponse validateUserResponse(String moduleId, PostUserQuery postUserResponse);
+  PostQuestionsResponse validateUserResponse(PostUserQuery postUserResponse);
 }

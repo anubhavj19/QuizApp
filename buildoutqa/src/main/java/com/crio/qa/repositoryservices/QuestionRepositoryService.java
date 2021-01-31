@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface QuestionRepositoryService {
 
-  List<Question> retrieveQuestionsFromModule(String moduleId);
+  List<Question> retrieveQuestionsFromModule();
 
-  List<Answer> retrieveAnswersFromModule(String moduleId);
+  List<Answer> retrieveAnswersFromModule();
 }

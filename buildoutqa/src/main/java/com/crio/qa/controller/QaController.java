@@ -19,19 +19,19 @@ public class QaController {
   @Autowired
   private QuestionService questionService;
 
-  @GetMapping("/quiz/{moduleId}")
-  public ResponseEntity<GetQuestionsResponse> getQuestions(@PathVariable String moduleId) {
+  @GetMapping("/quiz/1")
+  public ResponseEntity<GetQuestionsResponse> getQuestions() {
 
-    GetQuestionsResponse getQuestionsResponse = questionService.retrieveQuestions(moduleId);
+    GetQuestionsResponse getQuestionsResponse = questionService.retrieveQuestions();
 
     return ResponseEntity.ok().body(getQuestionsResponse);
   }
 
-  @PostMapping(path = "/quiz/{moduleId}", consumes = {"application/json"})
+  @PostMapping(path = "/quiz/1", consumes = {"application/json"})
   public ResponseEntity<PostQuestionsResponse> validateUserResponse(
-        @PathVariable String moduleId, @RequestBody PostUserQuery postUserQuery) {
+        @RequestBody PostUserQuery postUserQuery) {
     PostQuestionsResponse postQuestionResponse = 
-        questionService.validateUserResponse(moduleId, postUserQuery);
+        questionService.validateUserResponse(postUserQuery);
 
     return ResponseEntity.ok().body(postQuestionResponse);
   }

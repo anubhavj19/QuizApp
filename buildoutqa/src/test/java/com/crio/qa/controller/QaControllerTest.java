@@ -69,11 +69,8 @@ public class QaControllerTest {
     GetQuestionsResponse sampleGetResponse = loadSampleGetResponseList();
 
     when(questionService
-        .retrieveQuestions(any(String.class)))
+        .retrieveQuestions())
         .thenReturn(sampleGetResponse);
-
-    ArgumentCaptor<String> argumentCaptor = ArgumentCaptor
-        .forClass(String.class);
  
     URI uri = UriComponentsBuilder
         .fromPath(QUIZ_API_URI)
@@ -86,9 +83,6 @@ public class QaControllerTest {
         .getResponse();
 
     assertEquals(HttpStatus.OK.value(), response.getStatus());
-
-    verify(questionService, times(1))
-        .retrieveQuestions(argumentCaptor.capture());
 
   }
 

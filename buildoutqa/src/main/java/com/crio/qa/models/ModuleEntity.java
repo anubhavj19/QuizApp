@@ -17,7 +17,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @Getter
 @JsonIgnoreProperties(ignoreUnknown = true)
-@Document(collection = "questions")
 public class ModuleEntity {
 
   @Id

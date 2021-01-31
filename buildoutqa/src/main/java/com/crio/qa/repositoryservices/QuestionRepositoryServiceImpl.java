@@ -22,15 +22,9 @@ public class QuestionRepositoryServiceImpl implements QuestionRepositoryService 
   private QuestionRepository questionRepository;
 
   @Override
-  public List<Question> retrieveQuestionsFromModule(String moduleId) {
+  public List<Question> retrieveQuestionsFromModule() {
     // TODO Auto-generated method stub
-    List<ModuleEntity> modules = questionRepository.getModuleDetails(moduleId);
-    List<QuestionEntity> questionEntities = new ArrayList<>();
-
-    for (ModuleEntity module : modules) {
-      questionEntities.addAll(module.getQuestions());
-    }
-
+    List<QuestionEntity> questionEntities = questionRepository.findAll();
     
     ModelMapper modelMapper = new ModelMapper();
 
@@ -43,18 +37,13 @@ public class QuestionRepositoryServiceImpl implements QuestionRepositoryService 
   }
 
   @Override
-  public List<Answer> retrieveAnswersFromModule(String moduleId) {
+  public List<Answer> retrieveAnswersFromModule() {
     // TODO Auto-generated method stub
 
-    List<ModuleEntity> modules = questionRepository.getModuleDetails(moduleId);
-    List<QuestionEntity> questionEntities = new ArrayList<>();
-
-    for (ModuleEntity module : modules) {
-      questionEntities.addAll(module.getQuestions());
-    }
-
+    List<QuestionEntity> questionEntities = questionRepository.findAll();
     
     ModelMapper modelMapper = new ModelMapper();
+
     modelMapper.addMappings(new PropertyMap<QuestionEntity, Answer>() {
       protected void configure() {
         map().setCorrect(source.getCorrectAnswer());

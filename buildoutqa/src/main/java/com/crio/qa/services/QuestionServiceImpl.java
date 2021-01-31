@@ -22,10 +22,10 @@ public class QuestionServiceImpl implements QuestionService {
   QuestionRepositoryService questionRepositoryService;
 
   @Override
-  public GetQuestionsResponse retrieveQuestions(String moduleId) {
+  public GetQuestionsResponse retrieveQuestions() {
     // TODO Auto-generated method stub
 
-    List<Question> questions = questionRepositoryService.retrieveQuestionsFromModule(moduleId);
+    List<Question> questions = questionRepositoryService.retrieveQuestionsFromModule();
     GetQuestionsResponse response = new GetQuestionsResponse(questions);
 
     return response;
@@ -33,10 +33,10 @@ public class QuestionServiceImpl implements QuestionService {
 
   @Override
   public PostQuestionsResponse validateUserResponse(
-      String moduleId, @RequestBody PostUserQuery postUserQuery) {
+      @RequestBody PostUserQuery postUserQuery) {
     // TODO Auto-generated method stub
 
-    List<Answer> answers = questionRepositoryService.retrieveAnswersFromModule(moduleId);
+    List<Answer> answers = questionRepositoryService.retrieveAnswersFromModule();
     List<UserResponse> responses = postUserQuery.getResponses();
     int score = 0; 
     int total = answers.size();
